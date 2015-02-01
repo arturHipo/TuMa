@@ -1,5 +1,4 @@
 import bean.Starters;
-import bean.Team;
 import game.Round;
 import game.Tabel;
 
@@ -26,12 +25,13 @@ public class TurnamentCalculator {
         } else {
             for (Starters item : starters) {
                 // definire Aussetzer
+                //TODO Preufen ob das der richtige weg ist ????
                 item.setAuszeit(true);
             }
         }
 
-        // Erzeugung eines Turnierplans mit geraden anzahl an Teilnehmern
-        // calculate(starters);
+     // Erzeugung eines Turnierplans mit geraden anzahl an Teilnehmern
+     // calculate(starters);
     }
 
     private List<Round> calculate(List<Starters> list) {
