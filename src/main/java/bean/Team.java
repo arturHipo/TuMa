@@ -33,12 +33,19 @@ public class Team extends BasePlayer implements Starters {
 		return teamName;
 	}
 
-	public void setTeamName(String teamName) {
+    public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
 
-	@Override
+
+    public Team(String name) {
+        super(name);
+    }
+
+    @Override
 	public String palyerName() {
 		return getTeamName() + " :" + players.get(0).getName() + "/" + players.get(1).getName();
 	}
+
+
 }

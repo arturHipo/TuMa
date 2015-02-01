@@ -50,8 +50,8 @@ public class TurnamentCalculator {
 
            // System.out.println(list.get(anzahlTeilnehmer - 1).palyerName() + " : " + list.get(i).palyerName());
 
-            roundPlayers.add(list.get(anzahlTeilnehmer - 1));
-            roundPlayers.add(list.get(i));
+            roundPlayers.add(getTeilnehmer(list, anzahlTeilnehmer - 1));
+            roundPlayers.add(getTeilnehmer(list, i));
 
             int j = 1;
             while (j < anzahlTeilnehmer / 2) {
@@ -62,8 +62,8 @@ public class TurnamentCalculator {
                 if (b > anzahlTeilnehmer - 2)
                     b = b - (anzahlTeilnehmer - 1);
              //   System.out.println(list.get(a).palyerName() + " : " + list.get(b).palyerName());
-                roundPlayers.add(list.get(a));
-                roundPlayers.add(list.get(b));
+                roundPlayers.add(getTeilnehmer(list, a));
+                roundPlayers.add(getTeilnehmer(list, b));
 
                 j = j + 1;
             }
@@ -73,6 +73,10 @@ public class TurnamentCalculator {
         }
 
         return turnierRunden;
+    }
+
+    private Starters getTeilnehmer(List<Starters> list, int i) {
+        return list.get(i);
     }
 
     private boolean justNumberOfParticipant() {
