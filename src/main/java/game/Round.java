@@ -1,10 +1,11 @@
 package game;
 
-import bean.Starters;
-import bean.Team;
-import org.apache.commons.lang3.StringUtils;
+        import bean.Player;
+        import bean.Starters;
+        import bean.Team;
+        import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
+        import java.util.List;
 
 /**
  * Created by Artur on 01.02.15.
@@ -57,8 +58,11 @@ public class Round {
     @Override
     public String toString() {
 
-        return "Runde :"  + count + NEW_LINE +
-                teams.get(0).palyerName() + " gegen " + teams.get(1).palyerName() + NEW_LINE;
+        StringBuffer sb = new StringBuffer("Runde :"  + count + NEW_LINE );
+      for (int i = 0; i<teams.size();i =i+2){
+         sb.append(teams.get(i).palyerName() + " gegen " + teams.get(i+1).palyerName() + NEW_LINE );
+      }
+        return sb.toString();
 
     }
 }

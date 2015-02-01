@@ -21,7 +21,8 @@ public class TurnamentCalculator {
     public void calculateSingelPlayerTourney() {
 
         if (justNumberOfParticipant()) {
-            calculate(starters);
+            List<Round> tournament = calculate(starters);
+            System.out.print(tournament);
         } else {
             for (Starters item : starters) {
                 // definire Aussetzer
@@ -42,12 +43,12 @@ public class TurnamentCalculator {
         Round runde = null;
         while (i < anzahlTeilnehmer - 1) {
             roundPlayers = new ArrayList<Starters>();
-            System.out.println("Spiel " + (i + 1) + ":");
+            //System.out.println("Spiel " + (i + 1) + ":");
 
             runde = new Round(i + 1);
             runde.setTabel(Tabel.TABLE_1);
 
-            System.out.println(list.get(anzahlTeilnehmer - 1).palyerName() + " : " + list.get(i).palyerName());
+           // System.out.println(list.get(anzahlTeilnehmer - 1).palyerName() + " : " + list.get(i).palyerName());
 
             roundPlayers.add(list.get(anzahlTeilnehmer - 1));
             roundPlayers.add(list.get(i));
@@ -60,7 +61,7 @@ public class TurnamentCalculator {
                     a = a + (anzahlTeilnehmer - 1);
                 if (b > anzahlTeilnehmer - 2)
                     b = b - (anzahlTeilnehmer - 1);
-                System.out.println(list.get(a).palyerName() + " : " + list.get(b).palyerName());
+             //   System.out.println(list.get(a).palyerName() + " : " + list.get(b).palyerName());
                 roundPlayers.add(list.get(a));
                 roundPlayers.add(list.get(b));
 
@@ -80,6 +81,11 @@ public class TurnamentCalculator {
 
 
     public String printTournament(List<Round> list) {
+        StringBuilder sb = new StringBuilder();
+        for (Round r : list){
+            sb.append(r.toString());
+        }
 
+        return sb.toString();
     }
 }

@@ -27,16 +27,16 @@ public class Start {
 		Player jakob = new Player("Kuba");
 		Player dagmara = new Player("Dagmara");
 		Player wetzi = new Player("Wetzi");
-		Player alex = new Player("Alex");
+		Player artur = new Player("Artur");
 		Player thomas = new Player("Thomas");
 
 		ArrayList<Starters> list = new ArrayList<Starters>();
 		list.add(maja);
 		list.add(jakob);
 		list.add(dagmara);
-		list.add(alex);
-		// list.add(thomas);
-		// list.add(wetzi);
+		list.add(artur);
+		list.add(thomas);
+		list.add(wetzi);
 
 		return list;
 	}
