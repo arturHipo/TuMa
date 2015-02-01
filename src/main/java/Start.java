@@ -1,9 +1,9 @@
+import bean.Player;
+import bean.Starters;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import bean.Player;
-import bean.Starters;
 
 public class Start {
 
@@ -19,7 +19,6 @@ public class Start {
 		List<Starters> teilnehmer = init();
 		TurnamentCalculator calculator = new TurnamentCalculator(teilnehmer);
 		calculator.calculateSingelPlayerTourney();
-
 	}
 
 	private static List<Starters> init() {
